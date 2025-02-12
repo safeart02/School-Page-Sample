@@ -8,12 +8,14 @@ import {
 import HomePage from "../pages/homePage";
 import MainLayout from "../layouts/mainLayout";
 import CoursePage from "../pages/coursePage";
+import CoursesPage from "../pages/coursesPage";
 import NotFoundPage from "../pages/notFoundPage";
 import Transitions from "./Transitions"; // Import the Transitions component
 import PrivacyPolicy from '../copyright/privacyPolicy';
 import TermsConditions from '../copyright/termsConditions';
 import Disclaimer from '../copyright/disclaimer';
 import EULA from '../copyright/EULA';
+import ClockSample from '../pages/clockSample';
 
 
 const router = createBrowserRouter(
@@ -28,7 +30,15 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="/course"
+        path="/courses"
+        element={
+          <Transitions>
+            <CoursesPage />
+          </Transitions>
+        }
+      />
+      <Route
+        path="/course/:id"
         element={
           <Transitions>
             <CoursePage />
@@ -64,6 +74,14 @@ const router = createBrowserRouter(
         element={
           <Transitions>
             <EULA />
+          </Transitions>
+        }
+      />
+      <Route
+        path="/loading"
+        element={
+          <Transitions>
+            <ClockSample />
           </Transitions>
         }
       />

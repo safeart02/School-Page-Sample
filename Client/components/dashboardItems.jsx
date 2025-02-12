@@ -33,7 +33,7 @@ const DashboardItems = ({ isHome = false }) => {
   // Handle scroll event
   const onScroll = () => {
     const scrollY = window.scrollY;
-    
+
     // Update isScrolled based on the scroll position
     if (scrollY > thresholdY) {
       setIsScrolled(1); // Set to 1 when scrolled past threshold
@@ -63,14 +63,16 @@ const DashboardItems = ({ isHome = false }) => {
     <section>
       {/* Header with scroll-triggered animation and sticky positioning */}
       <header
-        className={`bg-gray-800 p-8 pb-8 z-10 ${isSticky ? "sticky top-16" : ''} flex items-center justify-center`}
+        className={`bg-gray-800 pt-8 pb-8 z-10 ${
+          isSticky ? "sticky top-20" : ""
+        } flex items-center justify-center`}
       >
         <motion.h1
           className="text-4xl font-extrabold text-white text-center"
           initial={{ opacity: 1, scale: 1 }}
           animate={{
-            opacity: isScrolled ? 0.5 : 1,  // Opacity will be either full (1) or slightly less (0.8)
-            scale: isScrolled ? 1 : 1.2,    // Scale down slightly after scroll
+            opacity: isScrolled ? 0.5 : 1, // Opacity will be either full (1) or slightly less (0.8)
+            scale: isScrolled ? 1 : 1.2, // Scale down slightly after scroll
           }}
           transition={{ duration: 0.3 }}
         >
