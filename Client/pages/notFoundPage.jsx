@@ -9,7 +9,7 @@ const notFoundPage = () => {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        height: '100vh',
+        height: '84vh',
         backgroundColor: '#f4f4f4',
         textAlign: 'center',
       }}

@@ -1,5 +1,5 @@
 import React from 'react'
-import DashboardItems from '../components/dashboarditems';
+import DashboardItems from '../components/dashboardItems';
 
 const coursePage = () => {
   return (

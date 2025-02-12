@@ -1,91 +1,100 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Items from "../dashboardItems.json";
+import { motion } from "framer-motion";
 import CourseListing from "./courseListing";
+import Spinner from "./spinner";
 
 const DashboardItems = ({ isHome = false }) => {
-  const itemListings = isHome ? Items.slice(0, 3) : Items;
-
-  // Values for scroll-driven animation
-  const initialValue = 140;
-  const finalValue = 88;
-  const thresholdY = 170; // Scroll position where state change occurs
-
-  const speed = 1;
-  const scrollDistance = (initialValue - finalValue) / speed;
-
-  const startY = 0; // Scroll position when transition starts
-  const endY = startY + scrollDistance;
-
-  const { scrollY } = useScroll();
-  const scrollOutput = useTransform(
-    scrollY,
-    [startY, endY, endY],
-    [initialValue, finalValue, finalValue],
-    {
-      clamp: false,
-    }
-  );
-
-  const [isPastThreshold, setIsPastThreshold] = useState(false);
-  const [isSticky, setIsSticky] = useState(true); // Track sticky state
-  const lastItemRef = useRef(null); // Ref for last course item
+  const [courses, setCourse] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(0); // 0 for not scrolled, 1 for scrolled
 
   useEffect(() => {
-    // Scroll listener to toggle sticky state
-    const onScroll = () => {
-      const lastItemBottom = lastItemRef.current?.getBoundingClientRect().bottom;
-      if (lastItemBottom < window.innerHeight) {
-        setIsSticky(false); // Unstick header when last item is out of view
-      } else {
-        setIsSticky(true); // Keep header sticky if the last item is still in view
+    const apiUrl = isHome ? "/api/courses?_limit=3" : "/api/courses";
+    const fetchCourses = async () => {
+      try {
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+        setCourse(data);
+      } catch (error) {
+        console.log("Error fetching courses:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    fetchCourses();
+  }, [isHome]);
 
+  const thresholdY = 20; // Scroll threshold to trigger animation
+
+  const [isSticky, setIsSticky] = useState(true);
+  const lastItemRef = useRef(null);
+
+  // Handle scroll event
+  const onScroll = () => {
+    const scrollY = window.scrollY;
+    
+    // Update isScrolled based on the scroll position
+    if (scrollY > thresholdY) {
+      setIsScrolled(1); // Set to 1 when scrolled past threshold
+    } else {
+      setIsScrolled(0); // Set to 0 when above the threshold
+    }
+
+    // Handle sticky logic
+    const lastItemBottom = lastItemRef.current?.getBoundingClientRect().bottom;
+    if (lastItemBottom < window.innerHeight) {
+      setIsSticky(false);
+    } else {
+      setIsSticky(true);
+    }
+  };
+
+  // Set up the scroll event listener
   useEffect(() => {
-    scrollY.onChange((latest) => {
-      setIsPastThreshold(latest > thresholdY);
-    });
-  }, [scrollY]);
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   return (
     <section>
       {/* Header with scroll-triggered animation and sticky positioning */}
       <header
-  className={`bg-gray-800 p-8 pb-0 z-10 ${isSticky ? 'sticky top-0' : 'relative'} flex items-center justify-center`}
->
-  <motion.h1
-    className="text-4xl font-extrabold text-white text-center"
-    style={{
-      height: scrollOutput, // Apply height animation
-    }}
-    initial={{ opacity: 1, scale: 1 }} // Start fully visible and normal scale
-    animate={{
-      opacity: isPastThreshold ? 1 : 1, // Change opacity based on scroll position
-      scale: isPastThreshold ? 1 : 1.2,  // Change scale based on scroll position
-    }}
-    transition={{ duration: 0.3 }} // Add a smooth transition
-  >
-    {isHome ? "Most Popular Courses" : "All Available Courses"}
-  </motion.h1>
-</header>
-
+        className={`bg-gray-800 p-8 pb-8 z-10 ${isSticky ? "sticky top-16" : ''} flex items-center justify-center`}
+      >
+        <motion.h1
+          className="text-4xl font-extrabold text-white text-center"
+          initial={{ opacity: 1, scale: 1 }}
+          animate={{
+            opacity: isScrolled ? 0.5 : 1,  // Opacity will be either full (1) or slightly less (0.8)
+            scale: isScrolled ? 1 : 1.2,    // Scale down slightly after scroll
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          {isHome ? "Most Popular Courses" : "All Available Courses"}
+        </motion.h1>
+      </header>
 
       {/* Course Listings */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-20">
-        {itemListings.map((course, index) => (
-          <div
-            key={course.id}
-            ref={index === itemListings.length - 1 ? lastItemRef : null} // Attach ref to the last item
-          >
-            <CourseListing course={course} />
+      {loading ? (
+        <Spinner loading={loading} />
+      ) : (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-20">
+            {courses.map((course, index) => (
+              <div
+                key={course.id}
+                ref={index === courses.length - 1 ? lastItemRef : null} // Attach ref to the last item
+              >
+                <CourseListing course={course} />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </section>
   );
 };

@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
+import {NavLink} from 'react-router-dom';
 
 const viewAllCourses = () => {
   return (
     <section className='m-auto max-w-lg my-10 px-6'>
-        <a 
-        href='/course'
-        className = 'block bg-green-700 text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700'>View All Courses
-        </a>
+        <NavLink 
+        to='/course'
+        className = 'block bg-green-700 text-white text-center py-4 px-6 rounded-xl hover:bg-green-800 transition duration-300'>View All Courses
+        </NavLink>
     </section>
   )
 }

@@ -15,7 +15,7 @@ const hero = ({title = 'Mint Academy', subtitle = 'Welcome to Mint Academy'}) =>
   ></div>
 
   {/* Content */}
-  <div className="relative z-10 flex justify-center items-center h-full text-center text-gray-900 px-6 sm:px-12">
+  <div className="relative z-10 flex justify-center items-center h-full text-center text-gray-800 px-6 sm:px-12">
     <div>
       <h1 className="text-4xl sm:text-5xl font-bold mb-4">
         {title}

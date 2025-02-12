@@ -1,4 +1,6 @@
-[
+{
+  "courses": [
+
   {
     "id": 1,
     "courses": "Introduction to Graphic Design",
@@ -7,7 +9,7 @@
   },
   {
     "id": 2,
-    "courses": "Advanced Data Analytics with R",
+    "courses": "Advanced Data Analytics with React",
     "description": "Take your data analysis skills to the next level with this in-depth course on R programming. Learn advanced techniques in statistical modeling, hypothesis testing, data visualization, and more. You will work with real-world datasets, gaining expertise in handling and analyzing large sets of data, as well as applying sophisticated algorithms. This course is ideal for those who already have a basic understanding of data analysis and want to explore the potential of R for solving complex data challenges.",
     "price": 189.99
   },
@@ -102,3 +104,4 @@
     "price": 129.99
   }
 ]
+}
