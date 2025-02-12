@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "courses": "Introduction to Graphic Design",
+    "description": "Dive into the world of graphic design, where you'll learn the fundamentals that drive visual communication. This course covers key principles like color theory, typography, and layout design. You will understand how to combine these elements to create cohesive, aesthetically pleasing designs, making it perfect for beginners looking to get started in the creative industry. Whether you're designing for print, web, or social media, this foundational course is your first step toward becoming a proficient designer.",
+    "price": 99.99
+  },
+  {
+    "id": 2,
+    "courses": "Advanced Data Analytics with R",
+    "description": "Take your data analysis skills to the next level with this in-depth course on R programming. Learn advanced techniques in statistical modeling, hypothesis testing, data visualization, and more. You will work with real-world datasets, gaining expertise in handling and analyzing large sets of data, as well as applying sophisticated algorithms. This course is ideal for those who already have a basic understanding of data analysis and want to explore the potential of R for solving complex data challenges.",
+    "price": 189.99
+  },
+  {
+    "id": 3,
+    "courses": "Mobile App Development with Flutter",
+    "description": "Want to create high-performance mobile apps for both iOS and Android? This course teaches you how to build cross-platform applications using Flutter, Google's open-source SDK. Learn the Dart programming language, explore the powerful widget system, and understand how to integrate native device features such as GPS, camera, and notifications. You’ll also learn how to debug, optimize, and deploy your apps to real-world devices, making it a must for aspiring app developers.",
+    "price": 249.99
+  },
+  {
+    "id": 4,
+    "courses": "Business and Entrepreneurship Basics",
+    "description": "This comprehensive course is perfect for anyone looking to start a business or deepen their entrepreneurial knowledge. Covering everything from business planning, market research, and funding options to branding, marketing strategies, and scaling your business, you'll learn how to build a sustainable business model and turn your ideas into reality. The course is designed for beginners and those looking to enhance their entrepreneurial skills, offering practical advice from industry professionals.",
+    "price": 149.99
+  },
+  {
+    "id": 5,
+    "courses": "Photography for Beginners",
+    "description": "Unlock the world of photography with this beginner-friendly course. Learn the basics of using a camera, including understanding different settings such as shutter speed, aperture, and ISO. You’ll also explore the importance of lighting, composition, and framing, all while developing your creative eye. Additionally, the course covers post-processing techniques to enhance your images and share them online. Perfect for anyone looking to take their photography skills to the next level.",
+    "price": 79.99
+  },
+  {
+    "id": 6,
+    "courses": "Digital Illustration with Procreate",
+    "description": "Master the art of digital illustration using Procreate on iPad in this hands-on course. Explore the app's intuitive interface, learn advanced drawing techniques, and experiment with various brushes, tools, and effects. You’ll create stunning, professional-quality artwork, while mastering the technical aspects of digital art, including layering, masking, and exporting. Whether you're a beginner or looking to refine your skills, this course will unlock your full creative potential.",
+    "price": 129.99
+  },
+  {
+    "id": 7,
+    "courses": "Cloud Computing Essentials",
+    "description": "Get started with cloud computing and learn about the essential services and platforms that power modern IT infrastructure. This course covers the basics of cloud service providers (like AWS, Azure, and Google Cloud), infrastructure as a service (IaaS), platform as a service (PaaS), and how to deploy apps to the cloud. You’ll also gain hands-on experience setting up cloud resources and learn how to manage scalability and security in cloud environments.",
+    "price": 199.99
+  },
+  {
+    "id": 8,
+    "courses": "Blockchain and Cryptocurrency Fundamentals",
+    "description": "Unlock the mysteries of blockchain and cryptocurrency with this beginner-friendly course. You’ll learn the core principles behind blockchain technology, how decentralized networks work, and the role of cryptocurrencies like Bitcoin and Ethereum. The course also explores smart contracts, digital wallets, mining, and the potential real-world applications of blockchain. Perfect for anyone curious about how these technologies are transforming industries and the financial sector.",
+    "price": 159.99
+  },
+  {
+    "id": 9,
+    "courses": "Public Speaking and Communication Skills",
+    "description": "Boost your confidence and public speaking abilities with this course designed to improve your communication skills. You’ll learn how to engage your audience, deliver compelling speeches, and effectively communicate your ideas. The course covers everything from overcoming stage fright and managing anxiety to using body language, vocal techniques, and visual aids. Whether you’re presenting in a business meeting, delivering a keynote, or speaking at a social event, this course will help you become a powerful communicator.",
+    "price": 119.99
+  },
+  {
+    "id": 10,
+    "courses": "Social Media Marketing for Brands",
+    "description": "Learn how to build and grow a brand using social media platforms. This course covers the fundamentals of social media marketing, from understanding the unique features of platforms like Instagram, Facebook, and Twitter, to creating content strategies that drive engagement and sales. You’ll learn how to track key performance indicators (KPIs), run paid ad campaigns, and leverage influencers to promote your brand. Ideal for entrepreneurs, marketers, or anyone looking to use social media as a tool for business growth.",
+    "price": 139.99
+  },
+  {
+    "id": 11,
+    "courses": "Cybersecurity Fundamentals",
+    "description": "Understand the basics of cybersecurity and learn how to protect your digital life in this essential course. Covering key concepts like network security, encryption, firewalls, and threat mitigation, you’ll gain a foundational understanding of how to safeguard data and avoid cyberattacks. This course is designed for beginners and offers practical advice on securing personal and business networks, making it a valuable asset for anyone interested in the growing field of cybersecurity.",
+    "price": 179.99
+  },
+  {
+    "id": 12,
+    "courses": "Creative Writing Workshop",
+    "description": "Unlock your creativity and improve your writing skills in this workshop, which covers everything from storytelling techniques to character development and narrative structure. Whether you're interested in writing fiction, poetry, or non-fiction, this course will help you develop your unique voice and style. You’ll also explore editing and revision strategies to improve your drafts, as well as techniques for staying motivated and inspired throughout the writing process.",
+    "price": 109.99
+  },
+  {
+    "id": 13,
+    "courses": "UX/UI Design Fundamentals",
+    "description": "This course introduces you to the fundamentals of user experience (UX) and user interface (UI) design. You’ll learn how to create user-centered designs by understanding the needs of your audience and translating them into intuitive, functional interfaces. The course covers wireframing, prototyping, user testing, and the tools used by professional designers, such as Adobe XD and Figma. Perfect for beginners who want to learn how to design apps and websites with a focus on enhancing the user's experience.",
+    "price": 149.99
+  },
+  {
+    "id": 14,
+    "courses": "Digital Marketing Mastery",
+    "description": "Learn the ins and outs of digital marketing in this comprehensive course. From SEO, SEM, and content marketing to email campaigns, conversion optimization, and data analytics, this course covers all key aspects of digital marketing. You’ll also explore social media marketing, paid ads, and affiliate marketing. Whether you’re a beginner or looking to refine your digital marketing strategy, this course will help you develop a thorough understanding of online marketing and how to drive traffic and sales.",
+    "price": 169.99
+  },
+  {
+    "id": 15,
+    "courses": "Game Development with Unity",
+    "description": "Learn how to build and design 2D and 3D games using Unity, one of the most popular game development engines. This course will guide you through the fundamentals of Unity, including creating game mechanics, implementing physics, and adding animations and sound effects. You'll also explore scripting with C# and learn how to publish your games across multiple platforms, such as mobile, desktop, and consoles. Perfect for aspiring game developers looking to break into the industry.",
+    "price": 219.99
+  },
+  {
+    "id": 16,
+    "courses": "AI and Machine Learning Basics",
+    "description": "Get an introduction to artificial intelligence (AI) and machine learning (ML) with this beginner-friendly course. You’ll learn how algorithms work, how to build machine learning models, and how to apply AI to solve real-world problems. Topics include supervised and unsupervised learning, neural networks, and deep learning. This course is perfect for anyone looking to enter the rapidly growing field of AI and ML, whether for career advancement or personal interest.",
+    "price": 199.99
+  },
+  {
+    "id": 17,
+    "courses": "Introduction to Video Editing",
+    "description": "Learn the art of video editing using industry-standard software such as Adobe Premiere Pro and Final Cut Pro. This course covers essential editing techniques like trimming, transitions, color correction, and sound design. You’ll also explore the basics of storytelling through video and how to effectively convey messages through editing. Whether you’re creating content for social media, films, or professional presentations, this course will help you develop the skills to create high-quality videos.",
+    "price": 129.99
+  }
+]
